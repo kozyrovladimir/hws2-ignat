@@ -1,5 +1,18 @@
+:root {
+    --max-container-width: 240px;
+}
+
 .buttonsContainer {
+    display: flex;
+    max-width: var(--max-container-width);
+    /*border: 2px solid red;*/
+    justify-content: space-between;
+    margin-top: 24px;
 }
 
 .editableSpanContainer {
+    display: flex;
+    max-width: var(--max-container-width);
+    height: 36px;
+    /*border: 2px solid green;*/
 }
