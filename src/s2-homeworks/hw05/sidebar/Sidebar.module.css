@@ -1,5 +1,8 @@
 .sidebar {
+    justify-self: end;
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: -320px;
     max-width: 320px;
@@ -11,8 +14,6 @@
 
 .sidebar.open {
     left: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 .background {
