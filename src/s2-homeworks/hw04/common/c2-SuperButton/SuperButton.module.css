@@ -10,7 +10,7 @@
 .disabled {
     background-color: var(--primary);
     opacity: 0.5;
-    color: #D1D1D1;
+    color: white;
     cursor: not-allowed;
 }
 

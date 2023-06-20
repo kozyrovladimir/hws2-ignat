@@ -36,14 +36,33 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText(res.data.errorText)
+                setInfo(res.data.info)
                 // дописать
 
             })
             .catch((e) => {
                 // дописать
-
+                if (e.response) {
+                    setCode(`Код ${e.response.status}!`)
+                    setImage(e.response.status === 400 ? error400 : error500)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else if (e.message) {
+                    setCode(e.message)
+                    setImage(errorUnknown)
+                    setText('Some error')
+                    setInfo('')
+                } else {
+                    setCode('Some error')
+                    setImage(errorUnknown)
+                    setText('Some error')
+                    setInfo('')
+                }
             })
     }
+
+    const buttonDisabled = info === '...loading'
 
     return (
         <div id={'hw13'}>
@@ -54,36 +73,36 @@ const HW13 = () => {
                     <SuperButton
                         id={'hw13-send-true'}
                         onClick={send(true)}
-                        xType={'secondary'}
+                        xType={'primary'}
                         // дописать
-
+                        disabled={buttonDisabled}
                     >
                         Send true
                     </SuperButton>
                     <SuperButton
                         id={'hw13-send-false'}
                         onClick={send(false)}
-                        xType={'secondary'}
+                        xType={'primary'}
                         // дописать
-
+                        disabled={buttonDisabled}
                     >
                         Send false
                     </SuperButton>
                     <SuperButton
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
-                        xType={'secondary'}
+                        xType={'primary'}
                         // дописать
-
+                        disabled={buttonDisabled}
                     >
                         Send undefined
                     </SuperButton>
                     <SuperButton
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
-                        xType={'secondary'}
+                        xType={'primary'}
                         // дописать
-
+                        disabled={buttonDisabled}
                     >
                         Send null
                     </SuperButton>
