@@ -1,16 +1,3 @@
-:root {
-    --primary: #0066CC;
-    --primary-hover: #0080FF ;
-    --primary-active: #0059B2;
-    --secondary: #f8f8f8;
-    --secondary-hover: #E5F0FA ;
-    --secondary-active: #C9E5FF;
-    --danger: #CC1439;
-    --danger-hover: #FF1A47;
-    --danger-active: #B31232;
-    --disabled: #004D99;
-}
-
 .button {
     display: block;
     padding: 4px 24px;
