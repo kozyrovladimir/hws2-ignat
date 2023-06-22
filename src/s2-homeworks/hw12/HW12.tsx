@@ -22,14 +22,14 @@ const HW12 = () => {
      const dispatch = useDispatch()
 
     // взять ид темы из редакса
-    const themeId: any = useSelector<any, ThemeStateType>(state => state.theme.themeId)
+    const themeId = useSelector<any, ThemeStateType>(state => state.theme.themeId)
 
     const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
-        document.documentElement.dataset.theme = themeId
+        document.documentElement.dataset.theme = String(themeId)
     }, [themeId])
 
     return (
