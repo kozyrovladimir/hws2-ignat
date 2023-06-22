@@ -13,23 +13,23 @@ import {changeThemeId, ThemeStateType} from './bll/themeReducer'
 * */
 
 const themes = [
-    {id: '1', value: 'light'},
-    {id: '2', value: 'blue'},
-    {id: '3', value: 'dark'},
+    {id: 1, value: 'light'},
+    {id: 2, value: 'blue'},
+    {id: 3, value: 'dark'},
 ]
 
 const HW12 = () => {
      const dispatch = useDispatch()
 
     // взять ид темы из редакса
-    const themeId = useSelector<any, ThemeStateType>(state => state.theme.themeId)
+    const themeId: any = useSelector<any, ThemeStateType>(state => state.theme.themeId)
 
-    const change = (id: string) => { // дописать функцию
+    const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
-        document.documentElement.dataset.theme = themeId + ''
+        document.documentElement.dataset.theme = themeId
     }, [themeId])
 
     return (
