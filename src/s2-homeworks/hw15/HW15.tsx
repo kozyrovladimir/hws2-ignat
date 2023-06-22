@@ -54,7 +54,18 @@ const HW15 = () => {
                 // делает студент
 
                 // сохранить пришедшие данные
+                const techs = res?.data.techs
+                const totalCount = res?.data.totalCount
 
+                if (techs) {
+                    setTechs(techs)
+                }
+
+                if (totalCount) {
+                    setTotalCount(totalCount)
+                }
+
+                setLoading(false)
                 //
             })
     }
@@ -67,7 +78,10 @@ const HW15 = () => {
 
         // sendQuery(
         // setSearchParams(
-
+           setPage(newPage)
+           setCount(newCount)
+           sendQuery({page: newPage, count: newCount, sort: sort})
+           setSearchParams({page: newPage.toString(), count: newCount.toString(), sort: sort})
         //
     }
 
@@ -79,7 +93,10 @@ const HW15 = () => {
 
         // sendQuery(
         // setSearchParams(
-
+        setSort(newSort)
+        setPage(1)
+        sendQuery({page: 1, count: count, sort: newSort})
+        setSearchParams({page: '1', count: count.toString(), sort: newSort})
         //
     }
 
