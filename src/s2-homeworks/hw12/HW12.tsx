@@ -29,8 +29,7 @@ const HW12 = () => {
     }
 
     useEffect(() => {
-        // @ts-ignore
-      document.documentElement.dataset.theme = themeId
+      document.documentElement.dataset.theme = themeId.themeId.toString()
     }, [themeId])
 
     return (
