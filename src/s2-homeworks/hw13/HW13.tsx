@@ -46,8 +46,8 @@ const HW13 = () => {
                 if (e.response) {
                     setCode(`Код ${e.response.status}!`)
                     setImage(e.response.status === 400 ? error400 : error500)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
+                    setText(e.response?.data?.errorText || 'Error')
+                    setInfo(e.response?.data?.info || 'Error')
                 } else if (e.message) {
                     setCode(e.message)
                     setImage(errorUnknown)
@@ -57,7 +57,7 @@ const HW13 = () => {
                     setCode('Some error')
                     setImage(errorUnknown)
                     setText('Some error')
-                    setInfo('')
+                    setInfo('Error')
                 }
             })
     }
