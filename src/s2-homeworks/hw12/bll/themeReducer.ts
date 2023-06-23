@@ -15,7 +15,7 @@ export const themeReducer = (state: ThemeStateType = initState, action: ThemeAct
         case 'SET_THEME_ID': {
             return {
                 ...state,
-                themeId: action.id,
+                themeId: Number(action.id),
             }
         }
 
